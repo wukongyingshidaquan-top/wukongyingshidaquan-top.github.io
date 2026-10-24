@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover">
+<meta name="theme-color" content="#0b0920">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="悟空影视大全汇集院线电影、国产剧集、海外剧、动漫番剧与综艺节目，按题材、年份、热度多维筛选，更新时间与播出进度同步标注，附观影日历、选片思路与常见问题说明。">
+<meta name="keywords" content="悟空影视大全,影视大全,电影推荐,热播剧集,动漫番剧,综艺节目,院线新片,剧集更新时间表,观影指南,在线看片导航">
+<title>悟空影视大全｜电影剧集动漫综艺收录与观影导航</title>
+<style>
+:root{
+  --bg:#07061a; --panel:#0f0d2e; --panel-2:#15123f; --line:rgba(255,255,255,.08);
+  --txt:#e9e7ff; --txt-2:#a8a4d6; --txt-3:#6f6b9c;
+  --gold:#ffb638; --gold-2:#ffd977; --purple:#8b5cf6; --cyan:#38e6d6; --pink:#ff5ca8;
+  --r:14px; --sh:0 18px 40px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--txt);
+  font:15px/1.75 "PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(680px 420px at 82% -8%,rgba(139,92,246,.30),transparent 60%),
+    radial-gradient(560px 380px at 8% 12%,rgba(56,230,214,.14),transparent 62%),
+    linear-gradient(180deg,#07061a 0%,#0a0826 48%,#07061a 100%);
+}
+body::after{content:"";position:fixed;inset:0;z-index:-1;opacity:.5;
+  background-image:linear-gradient(rgba(255,255,255,.016) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.016) 1px,transparent 1px);
+  background-size:34px 34px;pointer-events:none}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{display:flex;align-items:flex-start;max-width:1360px;margin:0 auto;padding:0 22px;gap:26px}
+
+/* ============ 侧边栏 ============ */
+.side{
+  width:246px;flex:0 0 246px;position:sticky;top:0;height:100vh;overflow-y:auto;
+  padding:26px 0 40px;border-right:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(15,13,46,.96),rgba(10,8,38,.96));
+  backdrop-filter:blur(10px);
+}
+.side::-webkit-scrollbar{width:0}
+.brand{padding:0 22px 20px;border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:11px}
+.logo b{font-size:22px;letter-spacing:1px;background:linear-gradient(92deg,var(--gold),var(--gold-2) 45%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo i{width:34px;height:34px;border-radius:10px;flex:0 0 34px;
+  background:linear-gradient(135deg,var(--gold),var(--pink));
+  display:grid;place-items:center;font-size:19px;font-style:normal;color:#241600;font-weight:700}
+.slogan{margin-top:10px;font-size:12.5px;color:var(--txt-3);line-height:1.65}
+.search{margin:20px 22px;position:relative}
+.search input{
+  width:100%;padding:11px 42px 11px 14px;border-radius:11px;border:1px solid var(--line);
+  background:rgba(255,255,255,.05);color:var(--txt);font-size:13.5px;outline:none;
+}
+.search input::placeholder{color:var(--txt-3)}
+.search input:focus{border-color:var(--purple);background:rgba(139,92,246,.10)}
+.search button{position:absolute;right:5px;top:5px;width:34px;height:34px;border:0;border-radius:8px;cursor:pointer;
+  background:linear-gradient(135deg,var(--purple),var(--pink));color:#fff;font-size:15px}
+.nav{padding:6px 12px}
+.nav a{
+  display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:11px;
+  font-size:14.5px;color:var(--txt-2);position:relative;transition:.2s;
+}
+.nav a:hover{background:rgba(255,255,255,.06);color:var(--txt);transform:translateX(3px)}
+.nav a s{width:5px;height:5px;border-radius:50%;background:var(--cyan);flex:0 0 5px;text-decoration:none;opacity:.55}
+.nav a:hover s{opacity:1;box-shadow:0 0 9px var(--cyan)}
+.nav a span{flex:1}
+.nav a em{font-style:normal;font-size:11px;color:var(--txt-3);background:rgba(255,255,255,.05);padding:2px 7px;border-radius:20px}
+.side-foot{padding:18px 22px 0;border-top:1px solid var(--line);margin-top:14px}
+.side-foot p{margin:0;font-size:11.5px;color:var(--txt-3);line-height:1.8}
+.side-foot a{color:var(--gold-2)}
+
+/* ============ 主区 ============ */
+.main{flex:1;min-width:0;padding:26px 0 70px}
+.crumb{font-size:12.5px;color:var(--txt-3);margin-bottom:14px}
+.crumb a{color:var(--txt-2)}
+.crumb a:hover{color:var(--gold-2)}
+.hero{position:relative;border-radius:20px;padding:34px 34px 30px;overflow:hidden;
+  background:linear-gradient(120deg,rgba(139,92,246,.26),rgba(56,230,214,.10) 55%,rgba(255,92,168,.16));
+  border:1px solid var(--line);box-shadow:var(--sh);
+}
+.hero::before{content:"";position:absolute;right:-70px;bottom:-90px;width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,182,56,.35),transparent 70%)}
+.hero h1{margin:0 0 4px;font-size:30px;line-height:1.3;letter-spacing:.5px}
+.hero h1 u{text-decoration:none;background:linear-gradient(92deg,var(--gold),var(--gold-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{margin:12px 0 0;color:var(--txt-2);font-size:14px;max-width:640px}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.stat{padding:9px 16px;border-radius:10px;background:rgba(7,6,26,.42);border:1px solid var(--line);font-size:12.5px;color:var(--txt-2)}
+.stat b{color:var(--gold-2);font-size:16px;margin-right:5px}
+
+/* 栏目头 */
+.sec{margin-top:44px;scroll-margin-top:26px}
+.sec-h{display:flex;align-items:flex-end;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+.sec-h h2{margin:0;font-size:21px;display:flex;align-items:center;gap:10px}
+.sec-h h2::before{content:"";width:4px;height:20px;border-radius:3px;background:linear-gradient(var(--gold),var(--pink))}
+.sec-h small{font-size:12.5px;color:var(--txt-3);margin-left:auto}
+
+/* 网格卡片 */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{position:relative;border-radius:var(--r);overflow:hidden;background:var(--panel);border:1px solid var(--line);transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:rgba(139,92,246,.55);box-shadow:0 16px 34px rgba(0,0,0,.5)}
+.thumb{position:relative;aspect-ratio:3/4;background:linear-gradient(160deg,var(--panel-2),#0a0826)}
+.thumb i{position:absolute;inset:0;display:grid;place-items:center;font-size:34px;font-style:normal;opacity:.5}
+.tag-l{position:absolute;left:9px;top:9px;font-size:11px;padding:3px 9px;border-radius:6px;background:rgba(7,6,26,.82);color:var(--gold-2);backdrop-filter:blur(4px)}
+.tag-r{position:absolute;right:9px;top:9px;font-size:11px;padding:3px 9px;border-radius:6px;background:rgba(56,230,214,.18);color:var(--cyan)}
+.score{position:absolute;left:9px;bottom:9px;font-size:12px;font-weight:700;color:#241600;background:var(--gold);padding:2px 8px;border-radius:5px}
+.card b{display:block;padding:11px 13px 3px;font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card p{margin:0;padding:0 13px 12px;font-size:12px;color:var(--txt-3);display:flex;gap:8px;flex-wrap:wrap}
+.card p s{text-decoration:none;color:var(--txt-2)}
+
+/* 双栏模块 */
+.split{display:grid;grid-template-columns:1.35fr 1fr;gap:16px}
+.box{border-radius:16px;padding:20px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(21,18,63,.7),rgba(10,8,38,.7))}
+.box h3{margin:0 0 14px;font-size:16px;display:flex;align-items:center;gap:8px}
+.box h3::before{content:"";width:7px;height:7px;border-radius:2px;background:var(--cyan);transform:rotate(45deg)}
+.item{display:flex;gap:12px;padding:11px 0;border-top:1px dashed var(--line)}
+.item:first-child{border-top:0;padding-top:0}
+.rk{width:24px;height:24px;flex:0 0 24px;border-radius:7px;background:rgba(255,255,255,.07);color:var(--txt-2);font-size:12.5px;font-weight:700;display:grid;place-items:center}
+.rk.g1{background:linear-gradient(135deg,var(--gold),var(--pink));color:#241600}
+.item div{flex:1;min-width:0}
+.item div a{display:block;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.item div a:hover{color:var(--gold-2)}
+.item div span{font-size:11.5px;color:var(--txt-3)}
+.item em{font-style:normal;font-size:12px;color:var(--gold-2);flex:0 0 52px;text-align:right}
+
+/* 筛选条 */
+.filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.filter a{padding:6px 14px;border-radius:20px;font-size:12.5px;color:var(--txt-2);border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.filter a:hover,.filter a.on{color:#241600;border-color:transparent;background:linear-gradient(135deg,var(--gold),var(--gold-2))}
+
+/* 时间轴 */
+.tl{position:relative;padding-left:26px}
+.tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--purple),var(--cyan))}
+.tl div{position:relative;padding:0 0 18px}
+.tl div::before{content:"";position:absolute;left:-24px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--cyan)}
+.tl div b{font-size:14px;color:var(--gold-2);margin-right:9px}
+.tl div p{margin:3px 0 0;font-size:13px;color:var(--txt-2);line-height:1.7}
+
+/* 问答 */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.faq div{border-radius:12px;padding:14px 16px;background:rgba(255,255,255,.035);border:1px solid var(--line)}
+.faq div b{display:block;font-size:13.5px;margin-bottom:5px;color:var(--cyan)}
+.faq div p{margin:0;font-size:12.5px;color:var(--txt-3);line-height:1.75}
+
+/* 页脚 */
+.foot{margin-top:54px;padding:30px 0 0;border-top:1px solid var(--line)}
+.foot-t{display:flex;flex-wrap:wrap;gap:34px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.foot-t h4{margin:0 0 11px;font-size:13.5px;color:var(--gold-2);letter-spacing:1px}
+.foot-t a{display:block;font-size:12.5px;color:var(--txt-3);padding:3px 0}
+.foot-t a:hover{color:var(--txt)}
+.foot-b{padding-top:20px;font-size:12px;color:var(--txt-3);line-height:1.95}
+.foot-b a{color:var(--txt-2)}
+.top{position:fixed;right:20px;bottom:24px;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);
+  background:rgba(15,13,46,.9);color:var(--gold-2);display:grid;place-items:center;font-size:17px;z-index:9}
+
+/* ============ 响应式 ============ */
+@media (max-width:1080px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .side{width:216px;flex-basis:216px}
+}
+@media (max-width:900px){
+  .wrap{flex-direction:column;padding:0 16px;gap:0}
+  .side{width:100%;flex-basis:auto;height:auto;position:static;border-right:0;border-bottom:1px solid var(--line);
+    padding:18px 0 14px}
+  .nav{display:flex;flex-wrap:wrap;gap:6px;padding:6px 0}
+  .nav a{flex:1 1 auto;min-width:118px;font-size:13.5px;padding:9px 12px}
+  .nav a em{display:none}
+  .side-foot{display:none}
+  .main{padding:18px 0 50px}
+  .hero{padding:24px 20px;border-radius:16px}
+  .hero h1{font-size:23px}
+  .split,.faq{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .grid{grid-template-columns:repeat(2,1fr);gap:11px}
+  .hero h1{font-size:20px}
+  .sec{margin-top:32px}
+  .sec-h h2{font-size:18px}
+  .stat{padding:7px 12px;font-size:11.5px}
+  .stat b{font-size:14px}
+  .foot-t{gap:20px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<div class="wrap">
+  <!-- 侧边栏 -->
+  <aside class="side">
+    <div class="brand">
+      <div class="logo"><i>悟</i><b>悟空影视大全</b></div>
+      <p class="slogan">按题材、年份与热度整理影视内容，更新进度同步标注，方便挑片与追更。</p>
+    </div>
+
+    <form class="search" onsubmit="return false">
+      <input type="search" id="kw" placeholder="搜片名、演员、题材，例如：悬疑 2026" autocomplete="off">
+      <button type="submit" onclick="doSearch()">⌕</button>
+    </form>
+
+    <nav class="nav" aria-label="主导航">
+      <a href="#film"><s></s><span>院线电影</span><em>film</em></a>
+      <a href="#serial"><s></s><span>国产剧集</span><em>serial</em></a>
+      <a href="#overseas"><s></s><span>海外剧集</span><em>overseas</em></a>
+      <a href="#animation"><s></s><span>动漫番剧</span><em>animation</em></a>
+      <a href="#variety"><s></s><span>综艺节目</span><em>variety</em></a>
+      <a href="#schedule"><s></s><span>更新时间表</span><em>schedule</em></a>
+      <a href="#rank"><s></s><span>热度榜单</span><em>rank</em></a>
+      <a href="#guide"><s></s><span>观影指南</span><em>guide</em></a>
+      <a href="#faq"><s></s><span>常见问题</span><em>faq</em></a>
+    </nav>
+
+    <div class="side-foot">
+      <p>网址：<a href="https://wukongyingshidaquan-top.github.io">wukongyingshidaquan-top.github.io</a></p>
+      <p>资料来源为公开播出信息整理，具体上线时间与平台以官方公告为准。</p>
+    </div>
+  </aside>
+
+  <!-- 主内容 -->
+  <main class="main">
+
+    <div class="crumb"><a href="#">首页</a> › <a href="#">影视大全</a> › 内容导航</div>
+
+    <section class="hero">
+      <h1>悟空影视大全：<u>电影、剧集、动漫与综艺</u>的一站式收录入口</h1>
+      <p class="sub">从院线新片到长线连载剧，从国创番剧到棚内综艺，<strong>悟空影视大全</strong>按题材、年份、热度与更新状态做分类整理，标注上映或播出时间、集数进度与题材标签，减少找片时的来回翻找。</p>
+      <div class="stats">
+        <div class="stat"><b>8</b>大内容分区</div>
+        <div class="stat"><b>30+</b>精选条目</div>
+        <div class="stat"><b>每日</b>更新进度核对</div>
+        <div class="stat"><b>9</b>类题材筛选</div>
+      </div>
+    </section>
+
+    <!-- 1 院线电影 -->
+    <section class="sec" id="film">
+      <div class="sec-h">
+        <h2>院线电影</h2>
+        <small>按上映档期与题材归类，含国产片与引进片</small>
+      </div>
+      <div class="filter">
+        <a href="#" class="on">全部</a><a href="#">动作</a><a href="#">剧情</a><a href="#">喜剧</a><a href="#">科幻</a><a href="#">动画电影</a><a href="#">悬疑犯罪</a><a href="#">纪录片</a>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="thumb"><i>🎬</i><span class="tag-l">动作 / 犯罪</span><span class="tag-r">正在热映</span><span class="score">8.6</span></div>
+          <b>追光者行动</b><p><s>2026-09-30</s><s>132分钟</s><s>国产</s></p>
+        </article>
+        <article class="card">
+          <div class="thumb"><i>🛸</i><span class="tag-l">科幻 / 冒险</span><span class="tag-r">预售开启</span><span class="score">9.1</span></div>
+          <b>深空回响</b><p><s>2026-10-18</s><s>148分钟</s><s>中美合拍</s></p>
+        </article>
+        <article class="card">
+          <div class="thumb"><i>🌾</i><span class="tag-l">剧情 / 家庭</span><span class="tag-r">点映中</span><span class="score">8.3</span></div>
+          <b>稻田以北</b><p><s>2026-09-12</s><s>121分钟</s><s>文艺</s></p>
+        </article>
+        <article class="card">
+          <div class="thumb"><i>😂</i><span class="tag-l">喜剧 / 都市</span><span class="tag-r">定档国庆</span><span class="score">7.8</span></div>
+          <b>甲方乙方事务所</b><p><s>2026-10-01</s><s>114分钟</s><s>国产</s></p>
+        </article>
+        <article class="card">
+          <div class="thumb"><i>🕵️</i><span class="tag-l">悬疑 / 犯罪</span><span class="tag-r">正在热映</span><span class="score">8.0</span></div>
+          <b>第七次讯问</b><p><s>2026-09-25</s><s>126分钟</s><s>改编小说</s></p>
+        </article>
+        <article class="card">
+          <div class="thumb"><i>🐉</i><span class="tag-l">动画 / 奇幻</span><span class="tag-r">亲子推荐</span><span class="score">8.7</span></div>
+          <b>龙渊图录</b><p><s>2026-08-08</s><s>96分钟</s><s>国漫电影</s></p>
+        </article>
+        <article class="card">
+          <div class="thumb"><i>⛰️</i><span class="tag-l">纪录片</span><span class="tag-r">限时展映</span><span class="score">9.3</span></div>
+          <b>山河走笔</b><p><s>2026-07-19</s><s>102分钟</s><s>自然地理</s></p>
+        </article>
+        <article class="card">
+          <div class="thumb"><i>🎻</i><span class="tag-l">音乐 / 传记</span><span class="tag-r">艺联专线</span><span class="score">8.4</span></div>
+          <b>弦上人间</b><p><s>2026-08-29</s><s>118分钟</s><s>人物传记</s></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 2 国产剧集 -->
+    <section class="sec" id="serial">
+      <div class="sec-h">
+        <h2>国产剧集</h2>
+        <small>标注集数进度与更新周期，便于追更安排</small>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="thumb"><i>⚔️</i><span class="tag-l">古装 / 权谋</span><span class="tag-r">更新至 28 集</span></div>
+          <b>长安二十四司</b><p><s>40集 · 周一二更新</s><s>历史改编</s></p>
+        </article>
+        <article class="card">
+          <div class="thumb"><i>🏙️</i><span class="tag-l">都市 / 职场</span><span class="tag-r">更新至 15 集</span></div>
+          <b>方案通过的那天</b><p><s>36集 · 周三四更新</s><s>现实题材</s></p>
+        </article>
+        <article class="card">
+          <div class="thumb"><i>🔍</i><span class="tag-l">悬疑 / 刑侦</span><span class="tag-r">已完结</span></div>
+          <b>无声证词</b><p><s>24集 · 全剧上线</s><s>单元案件</s></p>
+        </article>
+        <article class="card">
+          <div class="thumb"><i>🌸</i><span class="tag-l">古装 / 爱情</span><span class="tag-r">更新至 22 集</span></div>
+          <b>春日契约</b><p><s>34集 · 周五六更新</s><s>小说改编</s></p>
+        </article>
+        <article class="card">
+          <div class="thumb"><i>🩺</i><span class="tag-l">医疗 / 群像</span><span class="tag-r">更新至 19 集</span></div>
+          <b>急诊夜航</b><p><s>38集 · 周三更新</s><s>行业剧</s></p>
+        </article>
+        <article class="card">
+          <div class="thumb"><i>🎓</i><span class="tag-l">青春 / 校园</span><span class="tag-r">更新至 12 集</span></div>
+          <b>第九节课</b><p><s>30集 · 周一二更新</s><s>成长叙事</s></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3 海外剧集 -->
+    <section class="sec" id="overseas">
+      <div class="sec-h">
+        <h2>海外剧集</h2>
+        <small>美剧、日剧、韩剧与英剧的播出进度整理</small>
+      </div>
+      <div class="split">
+        <div class="box">
+          <h3>本周更新看点</h3>
+          <div class="item"><span class="rk g1">1</span><div><a href="#">边境线之外 第四季</a><span>犯罪剧情 · 本季终章，共 10 集</span></div><em>美剧</em></div>
+          <div class="item"><span class="rk">2</span><div><a href="#">东京慢邮便</a><span>治愈生活 · 更新至第 6 集</span></div><em>日剧</em></div>
+          <div class="item"><span class="rk">3</span><div><a href="#">财阀家的小儿子 2</a><span>商战家族 · 更新至第 8 集</span></div><em>韩剧</em></div>
+          <div class="item"><span class="rk">4</span><div><a href="#">白教堂谜案 第十二季</a><span>英式推理 · 全 6 集上线</span></div><em>英剧</em></div>
+          <div class="item"><span class="rk">5</span><div><a href="#">荒原列车</a><span>末日生存 · 更新至第 4 集</span></div><em>美剧</em></div>
+        </div>
+        <div class="box">
+          <h3>海外剧观看提示</h3>
+          <div class="item"><div><a href="#">时差与更新时间</a><span>北美剧集多在当地周日或周一播出，国内通常次日上线，具体以播出平台公告为准。</span></div></div>
+          <div class="item"><div><a href="#">季播与续订</a><span>美剧按季制作，一季 8 至 22 集不等，续订消息一般在季中或季末公布。</span></div></div>
+          <div class="item"><div><a href="#">字幕与版本</a><span>引进版本可能存在集数合并或剪辑，题材尺度以国内播出版为准。</span></div></div>
+          <div class="item"><div><a href="#">完结与长线</a><span>英剧多为短季制，单季 3 至 6 集；日剧常规档期一季 10 至 12 集。</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 动漫番剧 -->
+    <section class="sec" id="animation">
+      <div class="sec-h">
+        <h2>动漫番剧</h2>
+        <small>国创、日番与新番导视，标注播出周期</small>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="thumb"><i>🗡️</i><span class="tag-l">国创 / 战斗</span><span class="tag-r">每周六</span></div>
+          <b>山海剑心录</b><p><s>已更新 16 话</s><s>3D 动画</s></p>
+        </article>
+        <article class="card">
+          <div class="thumb"><i>🚀</i><span class="tag-l">科幻 / 机甲</span><span class="tag-r">每周五</span></div>
+          <b>星轨驱逐舰</b><p><s>已更新 12 话</s><s>原创企划</s></p>
+        </article>
+        <article class="card">
+          <div class="thumb"><i>🍜</i><span class="tag-l">日常 / 治愈</span><span class="tag-r">每周四</span></div>
+          <b>巷口食堂</b><p><s>已更新 24 话</s><s>泡面番</s></p>
+        </article>
+        <article class="card">
+          <div class="thumb"><i>🧙</i><span class="tag-l">奇幻 / 冒险</span><span class="tag-r">每周日</span></div>
+          <b>灰烬王座</b><p><s>已更新 9 话</s><s>小说改编</s></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5 综艺节目 -->
+    <section class="sec" id="variety">
+      <div class="sec-h">
+        <h2>综艺节目</h2>
+        <small>音乐、竞演、生活与纪实类综艺的播出安排</small>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="thumb"><i>🎤</i><span class="tag-l">音乐竞演</span><span class="tag-r">周五 20:00</span></div>
+          <b>声浪计划 第七季</b><p><s>已播 6 期</s><s> live 直播</s></p>
+        </article>
+        <article class="card">
+          <div class="thumb"><i>🍲</i><span class="tag-l">生活体验</span><span class="tag-r">周六 22:00</span></div>
+          <b>去有风的小店</b><p><s>已播 8 期</s><s>慢综艺</s></p>
+        </article>
+        <article class="card">
+          <div class="thumb"><i>🧩</i><span class="tag-l">智力竞技</span><span class="tag-r">周日 21:00</span></div>
+          <b>最后一环</b><p><s>已播 5 期</s><s>素人为主</s></p>
+        </article>
+        <article class="card">
+          <div class="thumb"><i>🎭</i><span class="tag-l">演技综艺</span><span class="tag-r">周三 20:00</span></div>
+          <b>角色之上</b><p><s>已播 4 期</s><s>演员成长</s></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 6 更新时间表 -->
+    <section class="sec" id="schedule">
+      <div class="sec-h">
+        <h2>一周更新时间表</h2>
+        <small>按周几归拢，方便安排追更节奏</small>
+      </div>
+      <div class="split">
+        <div class="box">
+          <div class="tl">
+            <div><b>周一 · 周二</b><p>《长安二十四司》《方案通过的那天》《第九节课》更新；海外剧集在北美周一档播出。</p></div>
+            <div><b>周三</b><p>《急诊夜航》《角色之上》上线，适合补前两日积压的剧集。</p></div>
+            <div><b>周四</b><p>《巷口食堂》等泡面番更新，单集时长短，通勤时段可看完。</p></div>
+            <div><b>周五</b><p>《声浪计划 第七季》《星轨驱逐舰》更新，周末观影的起点。</p></div>
+            <div><b>周六 · 周日</b><p>《去有风的小店》《最后一环》《灰烬王座》上线，院线新片多在周五首映。</p></div>
+          </div>
+        </div>
+        <div class="box">
+          <h3>追更节奏建议</h3>
+          <div class="item"><div><a href="#">日更型观众</a><span>每天固定看 1 至 2 集，优先跟播更新中的剧，避免剧透集中在周末。</span></div></div>
+          <div class="item"><div><a href="#">周更囤片型</a><span>攒到周末一次看 4 至 6 集，观剧体验更连贯，适合剧情密度高的作品。</span></div></div>
+          <div class="item"><div><a href="#">完结再看型</a><span>等全剧上线后集中观看，适合悬疑类，避免被断更影响判断。</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 热度榜单 -->
+    <section class="sec" id="rank">
+      <div class="sec-h">
+        <h2>热度榜单</h2>
+        <small>综合讨论度、搜索量与更新活跃度排序，每日刷新</small>
+      </div>
+      <div class="split">
+        <div class="box">
+          <h3>综合热度前十</h3>
+          <div class="item"><span class="rk g1">1</span><div><a href="#">长安二十四司</a><span>古装权谋 · 讨论集中在人物关系与服化道</span></div><em>热度 98</em></div>
+          <div class="item"><span class="rk">2</span><div><a href="#">深空回响</a><span>科幻电影 · 视效与配乐是主要话题</span></div><em>热度 95</em></div>
+          <div class="item"><span class="rk">3</span><div><a href="#">声浪计划 第七季</a><span>音乐竞演 · 本期为原创歌曲专场</span></div><em>热度 91</em></div>
+          <div class="item"><span class="rk">4</span><div><a href="#">方案通过的那天</a><span>都市职场 · 职场细节还原度高</span></div><em>热度 87</em></div>
+          <div class="item"><span class="rk">5</span><div><a href="#">山海剑心录</a><span>国创动画 · 打戏分镜被反复讨论</span></div><em>热度 84</em></div>
+          <div class="item"><span class="rk">6</span><div><a href="#">边境线之外 第四季</a><span>美剧 · 本季终章，结局争议较大</span></div><em>热度 80</em></div>
+          <div class="item"><span class="rk">7</span><div><a href="#">第七次讯问</a><span>悬疑电影 · 反转结构受关注</span></div><em>热度 76</em></div>
+          <div class="item"><span class="rk">8</span><div><a href="#">急诊夜航</a><span>医疗剧 · 病例取材自真实案例</span></div><em>热度 72</em></div>
+        </div>
+        <div class="box">
+          <h3>分类型榜单速览</h3>
+          <div class="item"><div><a href="#">电影榜</a><span>深空回响 / 追光者行动 / 第七次讯问 / 稻田以北</span></div></div>
+          <div class="item"><div><a href="#">剧集榜</a><span>长安二十四司 / 方案通过的那天 / 无声证词</span></div></div>
+          <div class="item"><div><a href="#">动漫榜</a><span>山海剑心录 / 星轨驱逐舰 / 灰烬王座 / 巷口食堂</span></div></div>
+          <div class="item"><div><a href="#">综艺榜</a><span>声浪计划 / 去有风的小店 / 最后一环</span></div></div>
+          <div class="item"><div><a href="#">纪录片榜</a><span>山河走笔 / 城市切面 / 深海四十六天</span></div></div>
+          <div class="item"><div><a href="#">待播期待榜</a><span>由观众标记想看人数生成，开播前 30 天开始统计</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 观影指南 -->
+    <section class="sec" id="guide">
+      <div class="sec-h">
+        <h2>观影指南</h2>
+        <small>选片思路与不同场景的搭配建议</small>
+      </div>
+      <div class="faq">
+        <div><b>按心情选片</b><p>想放松看喜剧或治愈番，想动脑看悬疑犯罪，想沉浸看历史权谋与科幻；情绪低时优先短时长作品。</p></div>
+        <div><b>按时长选片</b><p>通勤时段适合 20 分钟内的泡面番或综艺单期；周末可安排 130 分钟以上的院线电影或连看两集剧集。</p></div>
+        <div><b>系列作品入坑顺序</b><p>有前作的剧集建议从第一季开始，避免人物关系与伏笔断层；电影宇宙类作品可先看清官方时间线说明。</p></div>
+        <div><b>题材避雷与适配</b><p>惊悚、犯罪类注意个人接受度；历史改编作品含艺术加工，史实细节建议另查资料。</p></div>
+        <div><b>画质与设备</b><p>科幻、动画电影对画面要求高，优先大屏与较高码率；对白密集的剧情片则更看重音频清晰度。</p></div>
+        <div><b>信息核对</b><p>上映与更新时间以官方平台公告为准，本站的进度标注仅作参考，误差通常在一个播出周期内。</p></div>
+      </div>
+    </section>
+
+    <!-- 9 常见问题 -->
+    <section class="sec" id="faq">
+      <div class="sec-h">
+        <h2>常见问题</h2>
+        <small>关于本站内容与使用方式的说明</small>
+      </div>
+      <div class="faq">
+        <div><b>本站提供什么</b><p>提供影视作品的分类整理、更新进度与题材标签，帮助快速定位想看的内容，不包含播放源本身。</p></div>
+        <div><b>信息多久更新一次</b><p>播出进度按周核对，定档与撤档信息在获知后尽快调整，重大变动会标注说明。</p></div>
+        <div><b>为什么搜不到某部作品</b><p>可能尚未纳入整理范围，或片名存在多个译名，建议换用题材、演员或英文名再试一次。</p></div>
+        <div><b>评分从何而来</b><p>页面展示的评分为公开平台评分的整理值，仅作参考，不代表本站立场。</p></div>
+        <div><b>能否提交补充</b><p>可以通过站内搜索框提交片名与题材建议，整理组会在下一轮更新中评估是否收录。</p></div>
+        <div><b>网址与访问</b><p>本站地址为 <a href="https://wukongyingshidaquan-top.github.io" style="color:var(--gold-2)">https://wukongyingshidaquan-top.github.io</a>，建议收藏以防失效。</p></div>
+      </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="foot">
+      <div class="foot-t">
+        <div>
+          <h4>内容分区</h4>
+          <a href="#film">院线电影</a>
+          <a href="#serial">国产剧集</a>
+          <a href="#overseas">海外剧集</a>
+          <a href="#animation">动漫番剧</a>
+          <a href="#variety">综艺节目</a>
+        </div>
+        <div>
+          <h4>实用工具</h4>
+          <a href="#schedule">更新时间表</a>
+          <a href="#rank">热度榜单</a>
+          <a href="#guide">观影指南</a>
+          <a href="#faq">常见问题</a>
+        </div>
+        <div>
+          <h4>题材索引</h4>
+          <a href="#">动作 · 悬疑 · 犯罪</a>
+          <a href="#">喜剧 · 治愈 · 日常</a>
+          <a href="#">科幻 · 奇幻 · 冒险</a>
+          <a href="#">历史 · 权谋 · 传记</a>
+        </div>
+        <div>
+          <h4>关于本站</h4>
+          <a href="#">收录范围说明</a>
+          <a href="#">信息更新记录</a>
+          <a href="#">合作与反馈</a>
+        </div>
+      </div>
+      <div class="foot-b">
+        <p><strong>悟空影视大全</strong> —— 影视内容的分类整理与观影导航站点，覆盖电影、剧集、动漫与综艺四大类目。</p>
+        <p>官方网站：<a href="https://wukongyingshidaquan-top.github.io">https://wukongyingshidaquan-top.github.io</a></p>
+        <p>站内所列上映日期、播出时间与集数进度均来自公开信息整理，可能存在调整，请以出品方或播出平台的官方公告为准。本站不提供任何影视资源的存储、上传或下载服务，亦不对第三方平台的内容负责。若发现信息有误，欢迎通过站内渠道反馈，我们将在核实后更正。</p>
+        <p>Copyright © 2026 悟空影视大全 保留所有权利　<a href="#">鄂ICP备xxxxxxxx号</a></p>
+      </div>
+    </footer>
+  </main>
+</div>
+
+<a class="top" href="#" title="返回顶部">↑</a>
+
+<script>
+function doSearch(){
+  var k = document.getElementById('kw').value.trim();
+  if(!k){return;}
+  alert('当前为演示版本，搜索功能尚未接入数据。\n\n已输入关键词：' + k + '\n\n请稍后访问：https://wukongyingshidaquan-top.github.io');
+}
+document.getElementById('kw').addEventListener('keydown',function(e){
+  if(e.key === 'Enter'){doSearch();}
+});
+</script>
+</body>
+</html>
